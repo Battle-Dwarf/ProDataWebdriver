@@ -19,7 +19,7 @@ public class SignInPage {
     }
 
     public void inputEmailValue(){
-        emailInputField.sendKeys("example123a@example.com");
+        emailInputField.sendKeys("example123d@example.com");
     }
 
     public void clickCreateAnAccountButton(){
