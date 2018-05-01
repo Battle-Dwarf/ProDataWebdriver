@@ -10,10 +10,10 @@ import pageObjects.MainPage;
 import pageObjects.SignInPage;
 import java.util.concurrent.TimeUnit;
 
-public class RegisterNewUser {
+public class TestScenarios {
 
     @Test
-    public void testScenario(){
+    public void registerNewUser(){
 
         System.setProperty("webdriver.gecko.driver", "F:\\Dwarf\\Projects\\geckodriver-v0.20.1-win64\\geckodriver.exe");
 
@@ -43,13 +43,29 @@ public class RegisterNewUser {
 
         Assert.assertEquals("My account - My Store", driver.getTitle());
 
-        /*
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        */
+        driver.quit();
+    }
+
+    @Test
+    public void loginAlreadyRegisteredUser(){
+
+        System.setProperty("webdriver.gecko.driver", "F:\\Dwarf\\Projects\\geckodriver-v0.20.1-win64\\geckodriver.exe");
+
+        WebDriver driver = new FirefoxDriver();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        driver.get("http://automationpractice.com");
+
+        MainPage MainPage = PageFactory.initElements(driver, MainPage.class);
+        SignInPage SignInPage = PageFactory.initElements(driver, SignInPage.class);
+
+        MainPage.clickSigInButton();
+
+        SignInPage.inputRegisteredEmailValue();
+        SignInPage.inputRegisteredPasswordValue();
+        SignInPage.clickSignInAnAccountButton();
+
+        Assert.assertEquals("My account - My Store", driver.getTitle());
 
         driver.quit();
     }
