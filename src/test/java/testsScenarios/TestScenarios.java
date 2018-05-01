@@ -7,6 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import pageObjects.CreateAnAccountPage;
 import pageObjects.MainPage;
+import pageObjects.MyAccountPage;
 import pageObjects.SignInPage;
 import java.util.concurrent.TimeUnit;
 
@@ -66,6 +67,33 @@ public class TestScenarios {
         SignInPage.clickSignInAnAccountButton();
 
         Assert.assertEquals("My account - My Store", driver.getTitle());
+
+        driver.quit();
+    }
+
+    @Test
+    public void buyTshirt(){
+
+        System.setProperty("webdriver.gecko.driver", "F:\\Dwarf\\Projects\\geckodriver-v0.20.1-win64\\geckodriver.exe");
+
+        WebDriver driver = new FirefoxDriver();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        driver.get("http://automationpractice.com");
+
+        MainPage MainPage = PageFactory.initElements(driver, MainPage.class);
+        SignInPage SignInPage = PageFactory.initElements(driver, SignInPage.class);
+        MyAccountPage MyAccountPage = PageFactory.initElements(driver, pageObjects.MyAccountPage.class);
+
+        MainPage.clickSigInButton();
+
+        SignInPage.inputRegisteredEmailValue();
+        SignInPage.inputRegisteredPasswordValue();
+        SignInPage.clickSignInAnAccountButton();
+
+        MyAccountPage.clickTshirtButton();
+
+        //Assert.assertEquals("My account - My Store", driver.getTitle());
 
         driver.quit();
     }

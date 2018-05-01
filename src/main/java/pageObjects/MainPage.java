@@ -9,13 +9,13 @@ public class MainPage {
     private WebDriver driver;
 
     @FindBy(className = "login")
-    private WebElement SigInButton;
+    private WebElement sigInButton;
 
     public MainPage(WebDriver driver){
         this.driver = driver;
     }
 
     public void clickSigInButton(){
-        SigInButton.click();
+        sigInButton.click();
     }
 }
