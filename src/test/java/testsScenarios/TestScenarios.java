@@ -1,6 +1,5 @@
 package testsScenarios;
 
-import com.sun.org.apache.xpath.internal.operations.Or;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

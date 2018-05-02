@@ -9,7 +9,7 @@ public class MyAccountPage {
     private WebDriver driver;
 
     @FindBy(xpath = "//*[@id=\"block_top_menu\"]//li[3]//a[@title=\"T-shirts\"]")
-    private WebElement tshirtButton;
+    private static WebElement tshirtButton;
 
     public MyAccountPage(WebDriver driver){
         this.driver = driver;

@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,7 +29,8 @@ public class SignInPage {
     }
 
     public void inputEmailValue(){
-        emailInputField.sendKeys("example123f@example.com");
+        String generatedRandomString = RandomStringUtils.randomAlphanumeric(10);
+        emailInputField.sendKeys(generatedRandomString + "@example.com");
     }
 
     public void inputRegisteredEmailValue(){
