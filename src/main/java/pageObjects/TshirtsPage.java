@@ -15,6 +15,9 @@ public class TshirtsPage {
     @FindBy(xpath = "//span[contains(text(),'Add to cart')]")
     private WebElement tshirtAddToCartButton;
 
+    @FindBy(xpath = "//*[@class=\"btn btn-default button button-medium\"]")
+    private WebElement proceedToCheckoutButton;
+
     public TshirtsPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -26,4 +29,11 @@ public class TshirtsPage {
         hoverAndClick.click().perform();
     }
 
+    public void clickProceedToCheckoutButton() {
+        proceedToCheckoutButton.click();
+    }
+
+    public WebElement getproceedToCheckoutButton(){
+        return proceedToCheckoutButton;
+    }
 }

@@ -28,7 +28,7 @@ public class SignInPage {
     }
 
     public void inputEmailValue(){
-        emailInputField.sendKeys("example123e@example.com");
+        emailInputField.sendKeys("example123f@example.com");
     }
 
     public void inputRegisteredEmailValue(){

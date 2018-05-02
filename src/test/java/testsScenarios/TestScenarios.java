@@ -1,12 +1,16 @@
 package testsScenarios;
 
+import com.sun.org.apache.xpath.internal.operations.Or;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjects.*;
 
 import java.util.concurrent.TimeUnit;
@@ -75,8 +79,9 @@ public class TestScenarios {
     public void buyTshirt(){
         MainPage MainPage = PageFactory.initElements(driver, MainPage.class);
         SignInPage SignInPage = PageFactory.initElements(driver, SignInPage.class);
-        MyAccountPage MyAccountPage = PageFactory.initElements(driver, pageObjects.MyAccountPage.class);
-        TshirtsPage TshirtsPage = PageFactory.initElements(driver, pageObjects.TshirtsPage.class);
+        MyAccountPage MyAccountPage = PageFactory.initElements(driver, MyAccountPage.class);
+        TshirtsPage TshirtsPage = PageFactory.initElements(driver, TshirtsPage.class);
+        OrderPage OrderPage = PageFactory.initElements(driver, OrderPage.class);
 
         MainPage.clickSigInButton();
 
@@ -87,11 +92,17 @@ public class TestScenarios {
         MyAccountPage.clickTshirtButton();
 
         TshirtsPage.TshirtAddToCartHoverAction();
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+        WebElement proceedToCheckoutButton = wait.until(ExpectedConditions.elementToBeClickable(TshirtsPage.getproceedToCheckoutButton()));
+        TshirtsPage.clickProceedToCheckoutButton();
 
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        OrderPage.clickProceedToCheckout1Button();
+        OrderPage.clickProceedToCheckout2Button();
+        OrderPage.clickTermsOfServiceCheckBox();
+        OrderPage.clickProceedToCheckout3Button();
+        OrderPage.clickpayByWireButton();
+        OrderPage.clickIConfirmMyOrderButton();
+
+        Assert.assertEquals("Order confirmation - My Store", driver.getTitle());
     }
 }
