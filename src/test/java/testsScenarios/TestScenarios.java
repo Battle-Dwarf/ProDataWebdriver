@@ -21,7 +21,7 @@ public class TestScenarios {
     @Before
     public void SetUp() {
 
-        System.setProperty("webdriver.gecko.driver", "F:\\Dwarf\\Projects\\geckodriver-v0.20.1-win64\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "/Users/Dwarf/Downloads/geckodriver");
 
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
