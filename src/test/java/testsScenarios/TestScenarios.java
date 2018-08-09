@@ -7,7 +7,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjects.*;
@@ -38,9 +38,9 @@ public class TestScenarios {
     @Test
     public void registerNewUser() {
 
-        MainPage MainPage = PageFactory.initElements(driver, MainPage.class);
-        SignInPage SignInPage = PageFactory.initElements(driver, SignInPage.class);
-        CreateAnAccountPage CreateAnAccountPage = PageFactory.initElements(driver, CreateAnAccountPage.class);
+        MainPage MainPage = new MainPage(driver);
+        SignInPage SignInPage = new SignInPage(driver);
+        CreateAnAccountPage CreateAnAccountPage = new CreateAnAccountPage(driver);
 
         MainPage.clickSigInButton();
 
@@ -62,8 +62,8 @@ public class TestScenarios {
 
     @Test
     public void loginAlreadyRegisteredUser(){
-        MainPage MainPage = PageFactory.initElements(driver, MainPage.class);
-        SignInPage SignInPage = PageFactory.initElements(driver, SignInPage.class);
+        MainPage MainPage = new MainPage(driver);
+        SignInPage SignInPage = new SignInPage(driver);
 
         MainPage.clickSigInButton();
 
@@ -76,11 +76,11 @@ public class TestScenarios {
 
     @Test
     public void buyTshirt(){
-        MainPage MainPage = PageFactory.initElements(driver, MainPage.class);
-        SignInPage SignInPage = PageFactory.initElements(driver, SignInPage.class);
-        MyAccountPage MyAccountPage = PageFactory.initElements(driver, MyAccountPage.class);
-        TshirtsPage TshirtsPage = PageFactory.initElements(driver, TshirtsPage.class);
-        OrderPage OrderPage = PageFactory.initElements(driver, OrderPage.class);
+        MainPage MainPage = new MainPage(driver);
+        SignInPage SignInPage = new SignInPage(driver);
+        MyAccountPage MyAccountPage = new MyAccountPage(driver);
+        TshirtsPage TshirtsPage = new TshirtsPage(driver);
+        OrderPage OrderPage = new OrderPage(driver);
 
         MainPage.clickSigInButton();
 
@@ -89,6 +89,9 @@ public class TestScenarios {
         SignInPage.clickSignInAnAccountButton();
 
         MyAccountPage.clickTshirtButton();
+
+        JavascriptExecutor jsx = (JavascriptExecutor) driver;
+        jsx.executeScript("window.scrollBy(0,450)", "");
 
         TshirtsPage.TshirtAddToCartHoverAction();
         WebDriverWait wait = new WebDriverWait(driver, 5);
