@@ -17,7 +17,8 @@ public class MyAccountPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void clickTshirtButton(){
+    public MyAccountPage clickTshirtButton(){
         tshirtButton.click();
+        return this;
     }
 }
