@@ -46,13 +46,13 @@ public class SignInPage {
         return this;
     }
 
-    public SignInPage clickCreateAnAccountButton(){
+    public CreateAnAccountPage clickCreateAnAccountButton(){
         createAnAccountButton.click();
-        return this;
+        return new CreateAnAccountPage(driver);
     }
 
-    public SignInPage clickSignInAnAccountButton(){
+    public MyAccountPage clickSignInAnAccountButton(){
         signInAnAccountButton.click();
-        return this;
+        return new MyAccountPage(driver);
     }
 }

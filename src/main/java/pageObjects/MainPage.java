@@ -17,8 +17,8 @@ public class MainPage {
         PageFactory.initElements(driver,this);
     }
 
-    public MainPage clickSigInButton(){
+    public SignInPage clickSigInButton(){
         sigInButton.click();
-        return this;
+        return new SignInPage(driver);
     }
 }

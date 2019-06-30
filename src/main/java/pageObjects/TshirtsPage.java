@@ -32,9 +32,9 @@ public class TshirtsPage {
         return this;
     }
 
-    public TshirtsPage clickProceedToCheckoutButton() {
+    public OrderPage clickProceedToCheckoutButton() {
         proceedToCheckoutButton.click();
-        return this;
+        return new OrderPage(driver);
     }
 
     public WebElement getproceedToCheckoutButton(){

@@ -42,12 +42,10 @@ public class TestScenarios {
         SignInPage SignInPage = new SignInPage(driver);
         CreateAnAccountPage CreateAnAccountPage = new CreateAnAccountPage(driver);
 
-        MainPage.clickSigInButton();
-
-        SignInPage.inputEmailValue()
-                .clickCreateAnAccountButton();
-
-        CreateAnAccountPage.inputCustomerFirstNameValue()
+        MainPage.clickSigInButton()
+                .inputEmailValue()
+                .clickCreateAnAccountButton()
+                .inputCustomerFirstNameValue()
                 .inputCustomerLastNameValue()
                 .inputCustomerPasswordValue()
                 .inputCustomerAddressValue()
@@ -65,9 +63,8 @@ public class TestScenarios {
         MainPage MainPage = new MainPage(driver);
         SignInPage SignInPage = new SignInPage(driver);
 
-        MainPage.clickSigInButton();
-
-        SignInPage.inputRegisteredEmailValue()
+        MainPage.clickSigInButton()
+            .inputRegisteredEmailValue()
             .inputRegisteredPasswordValue()
             .clickSignInAnAccountButton();
 
@@ -82,13 +79,11 @@ public class TestScenarios {
         TshirtsPage TshirtsPage = new TshirtsPage(driver);
         OrderPage OrderPage = new OrderPage(driver);
 
-        MainPage.clickSigInButton();
-
-        SignInPage.inputRegisteredEmailValue()
+        MainPage.clickSigInButton()
+            .inputRegisteredEmailValue()
             .inputRegisteredPasswordValue()
-            .clickSignInAnAccountButton();
-
-        MyAccountPage.clickTshirtButton();
+            .clickSignInAnAccountButton()
+            .clickTshirtButton();
 
         JavascriptExecutor jsx = (JavascriptExecutor) driver;
         jsx.executeScript("window.scrollBy(0,450)", "");
@@ -96,9 +91,8 @@ public class TestScenarios {
         TshirtsPage.TshirtAddToCartHoverAction();
         WebDriverWait wait = new WebDriverWait(driver, 5);
         WebElement proceedToCheckoutButton = wait.until(ExpectedConditions.elementToBeClickable(TshirtsPage.getproceedToCheckoutButton()));
-        TshirtsPage.clickProceedToCheckoutButton();
-
-        OrderPage.clickProceedToCheckout1Button()
+        TshirtsPage.clickProceedToCheckoutButton()
+            .clickProceedToCheckout1Button()
             .clickProceedToCheckout2Button()
             .clickTermsOfServiceCheckBox()
             .clickProceedToCheckout3Button()
