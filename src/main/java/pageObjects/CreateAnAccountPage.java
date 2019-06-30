@@ -42,40 +42,49 @@ public class CreateAnAccountPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void inputCustomerFirstNameValue(){
+    public CreateAnAccountPage inputCustomerFirstNameValue(){
         customerFirstNameField.sendKeys("First Name");
+        return this;
     }
 
-    public void inputCustomerLastNameValue(){
+    public CreateAnAccountPage inputCustomerLastNameValue(){
         customerLastNameField.sendKeys("Last Name");
+        return this;
     }
 
-    public void inputCustomerPasswordValue(){
+    public CreateAnAccountPage inputCustomerPasswordValue(){
         customerPasswordField.sendKeys("Password");
+        return this;
     }
 
-    public void inputCustomerAddressValue(){
+    public CreateAnAccountPage inputCustomerAddressValue(){
         customerAddressField.sendKeys("Address Name");
+        return this;
     }
 
-    public void inputCustomerCityValue(){
+    public CreateAnAccountPage inputCustomerCityValue(){
         customerCityField.sendKeys("City Name");
+        return this;
     }
 
-    public void inputCustomerPostcodeValue(){
+    public CreateAnAccountPage inputCustomerPostcodeValue(){
         customerPostcodeField.sendKeys("11223");
+        return this;
     }
 
-    public void selectCustomerIdStateValue(){
+    public CreateAnAccountPage selectCustomerIdStateValue(){
         Select state = new Select(customerIdStateSelectBox);
         state.selectByVisibleText("Alaska");
+        return this;
     }
 
-    public void inputCustomerPhoneMobileValue(){
+    public CreateAnAccountPage inputCustomerPhoneMobileValue(){
         customerPhoneMobileField.sendKeys("111222333");
+        return this;
     }
 
-    public void clickSubmitAnAccountButton(){
+    public CreateAnAccountPage clickSubmitAnAccountButton(){
         submitAnAccountButton.click();
+        return this;
     }
 }
