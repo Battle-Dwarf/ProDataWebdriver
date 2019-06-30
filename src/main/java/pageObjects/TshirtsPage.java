@@ -24,15 +24,17 @@ public class TshirtsPage {
         PageFactory.initElements(driver,this);
     }
 
-    public void TshirtAddToCartHoverAction() {
+    public TshirtsPage TshirtAddToCartHoverAction() {
         Actions hoverAndClick = new Actions(driver);
         hoverAndClick.moveToElement(tshirtHoverElement);
         hoverAndClick.moveToElement(tshirtAddToCartButton);
         hoverAndClick.click().perform();
+        return this;
     }
 
-    public void clickProceedToCheckoutButton() {
+    public TshirtsPage clickProceedToCheckoutButton() {
         proceedToCheckoutButton.click();
+        return this;
     }
 
     public WebElement getproceedToCheckoutButton(){

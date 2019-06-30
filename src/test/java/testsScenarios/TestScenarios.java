@@ -44,8 +44,8 @@ public class TestScenarios {
 
         MainPage.clickSigInButton();
 
-        SignInPage.inputEmailValue();
-        SignInPage.clickCreateAnAccountButton();
+        SignInPage.inputEmailValue()
+                .clickCreateAnAccountButton();
 
         CreateAnAccountPage.inputCustomerFirstNameValue()
                 .inputCustomerLastNameValue()
@@ -67,9 +67,9 @@ public class TestScenarios {
 
         MainPage.clickSigInButton();
 
-        SignInPage.inputRegisteredEmailValue();
-        SignInPage.inputRegisteredPasswordValue();
-        SignInPage.clickSignInAnAccountButton();
+        SignInPage.inputRegisteredEmailValue()
+            .inputRegisteredPasswordValue()
+            .clickSignInAnAccountButton();
 
         Assert.assertEquals("My account - My Store", driver.getTitle());
     }
@@ -84,9 +84,9 @@ public class TestScenarios {
 
         MainPage.clickSigInButton();
 
-        SignInPage.inputRegisteredEmailValue();
-        SignInPage.inputRegisteredPasswordValue();
-        SignInPage.clickSignInAnAccountButton();
+        SignInPage.inputRegisteredEmailValue()
+            .inputRegisteredPasswordValue()
+            .clickSignInAnAccountButton();
 
         MyAccountPage.clickTshirtButton();
 
@@ -98,12 +98,12 @@ public class TestScenarios {
         WebElement proceedToCheckoutButton = wait.until(ExpectedConditions.elementToBeClickable(TshirtsPage.getproceedToCheckoutButton()));
         TshirtsPage.clickProceedToCheckoutButton();
 
-        OrderPage.clickProceedToCheckout1Button();
-        OrderPage.clickProceedToCheckout2Button();
-        OrderPage.clickTermsOfServiceCheckBox();
-        OrderPage.clickProceedToCheckout3Button();
-        OrderPage.clickpayByWireButton();
-        OrderPage.clickIConfirmMyOrderButton();
+        OrderPage.clickProceedToCheckout1Button()
+            .clickProceedToCheckout2Button()
+            .clickTermsOfServiceCheckBox()
+            .clickProceedToCheckout3Button()
+            .clickpayByWireButton()
+            .clickIConfirmMyOrderButton();
 
         Assert.assertEquals("Order confirmation - My Store", driver.getTitle());
     }

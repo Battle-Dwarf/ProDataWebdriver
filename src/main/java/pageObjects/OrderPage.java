@@ -32,27 +32,33 @@ public class OrderPage {
         PageFactory.initElements(driver,this);
     }
 
-    public void clickProceedToCheckout1Button(){
+    public OrderPage clickProceedToCheckout1Button(){
         proceedToCheckout1Button.click();
+        return this;
     }
 
-    public void clickProceedToCheckout2Button(){
+    public OrderPage clickProceedToCheckout2Button(){
         proceedToCheckout2Button.click();
+        return this;
     }
 
-    public void clickProceedToCheckout3Button(){
+    public OrderPage clickProceedToCheckout3Button(){
         proceedToCheckout3Button.click();
+        return this;
     }
 
-    public void clickTermsOfServiceCheckBox(){
+    public OrderPage clickTermsOfServiceCheckBox(){
         termsOfServiceCheckBox.click();
+        return this;
     }
 
-    public void clickpayByWireButton(){
+    public OrderPage clickpayByWireButton(){
         payByBankWireButton.click();
+        return this;
     }
 
-    public void clickIConfirmMyOrderButton(){
+    public OrderPage clickIConfirmMyOrderButton(){
         iConfirmMyOrderButton.click();
+        return this;
     }
 }

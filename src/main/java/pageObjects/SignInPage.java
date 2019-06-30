@@ -30,24 +30,29 @@ public class SignInPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void inputEmailValue(){
+    public SignInPage inputEmailValue(){
         String generatedRandomString = RandomStringUtils.randomAlphanumeric(10);
         emailInputField.sendKeys(generatedRandomString + "@example.com");
+        return this;
     }
 
-    public void inputRegisteredEmailValue(){
+    public SignInPage inputRegisteredEmailValue(){
         registeredEmailInputField.sendKeys("example123e@example.com");
+        return this;
     }
 
-    public void inputRegisteredPasswordValue(){
+    public SignInPage inputRegisteredPasswordValue(){
         registeredPasswordInputField.sendKeys("Password");
+        return this;
     }
 
-    public void clickCreateAnAccountButton(){
+    public SignInPage clickCreateAnAccountButton(){
         createAnAccountButton.click();
+        return this;
     }
 
-    public void clickSignInAnAccountButton(){
+    public SignInPage clickSignInAnAccountButton(){
         signInAnAccountButton.click();
+        return this;
     }
 }
