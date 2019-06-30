@@ -47,15 +47,15 @@ public class TestScenarios {
         SignInPage.inputEmailValue();
         SignInPage.clickCreateAnAccountButton();
 
-        CreateAnAccountPage.inputCustomerFirstNameValue();
-        CreateAnAccountPage.inputCustomerLastNameValue();
-        CreateAnAccountPage.inputCustomerPasswordValue();
-        CreateAnAccountPage.inputCustomerAddressValue();
-        CreateAnAccountPage.inputCustomerCityValue();
-        CreateAnAccountPage.inputCustomerPostcodeValue();
-        CreateAnAccountPage.selectCustomerIdStateValue();
-        CreateAnAccountPage.inputCustomerPhoneMobileValue();
-        CreateAnAccountPage.clickSubmitAnAccountButton();
+        CreateAnAccountPage.inputCustomerFirstNameValue()
+                .inputCustomerLastNameValue()
+                .inputCustomerPasswordValue()
+                .inputCustomerAddressValue()
+                .inputCustomerCityValue()
+                .inputCustomerPostcodeValue()
+                .selectCustomerIdStateValue()
+                .inputCustomerPhoneMobileValue()
+                .clickSubmitAnAccountButton();
 
         Assert.assertEquals("My account - My Store", driver.getTitle());
     }
